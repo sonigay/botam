@@ -944,7 +944,7 @@ while True:
 									)
 							await msg.channel.send(embed=embed, tts=False)
 		else :
-			message = await client.get_channel(channel).fetch_message(msg.id)
+			message = await client.send_message(user,msg)
 			
 			################ 텍스트 정보확인 ################ 
 
