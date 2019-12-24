@@ -942,7 +942,7 @@ while True:
 									description= '```' + SearchID + ' 모델 MNP 단가는 ' + result + ' 입니다.```',
 									color=0xff00ff
 									)
-							await client.send_message(user,msg)
+							await msg.channel.send(embed=embed, tts=False)
 		else :
 			message = await client.get_channel(channel).fetch_message(msg.id)
 			
