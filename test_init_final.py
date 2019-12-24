@@ -924,7 +924,7 @@ while True:
 			##################################
 			if basicSetting[11] != "":
 				if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
-					message = await client.send_message(user,msg)
+					message = await msg.channel.fetch_message(msg.id)
 
 					################ 정산확인 ################ 
 
@@ -944,7 +944,7 @@ while True:
 									)
 							await msg.channel.send(embed=embed, tts=False)
 		else :
-			message = await client.send_message(user,msg)
+			message = await client.get_channel(channel).fetch_message(msg.id)
 			
 			################ 텍스트 정보확인 ################ 
 
