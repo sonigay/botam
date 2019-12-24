@@ -1813,52 +1813,7 @@ while True:
 				#client.clear()
 				raise SystemExit
 
-		################ 짱구봇 복사 ################
-	
-        @client.event
-async def on_message(message):
-
-     if message.content.startswith('!한명뽑기'):
-        await client.send_message(message.channel, "이번 당첨자 분은")   
-                      
-     if message.content.startswith('!한명뽑기'):
-        choice = message.content.split(" ")
-        choicenumber = random.randint(1, len(choice)-1)
-        choiceresult = choice[choicenumber]
-        await client.send_message(message.channel, choiceresult)
-        
-     if message.content.startswith('!뭐먹지'):
-        food = "짜장면 짬뽕 라면 밥 굶기"
-        foodchoice = food.split(" ")
-        foodnumber = random.randint(1, len(foodchoice))
-        foodresult = foodchoice[foodnumber-1]
-        await client.send_message(message.channel, foodresult)
-        
-     if message.content.startswith('!여러명뽑기'):
-        await client.send_message(message.channel, "이번 당첨자 분들은")  
-
-     if message.content.startswith("!여러명뽑기"):
-        team = message.content[7:]
-        peopleteam = team.split("/")
-        people = peopleteam[0]
-        team = peopleteam[1]
-        person = people.split(" ")
-        teamname = team.split(" ")
-        random.shuffle(teamname)
-        for i in range(0, len(person)):
-            await client.send_message(message.channel, person[i] + "---->" + teamname[i])
-	
-	
-	################ 짱구봇 복사 엔드 ################
-		
-		
-		
-		
-		
-		
-		
-		
-		
+				
 		        ################ 상태메세지변경 ################ 
 
 			if message.content.startswith(command[19]):
