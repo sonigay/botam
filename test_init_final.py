@@ -938,7 +938,7 @@ while True:
 
 							wks.update_acell(basicSetting[15], SearchID)
 
-							range_list = worksheet.range('A1:D2')
+							range_list = wks.range('A1:B10')
                                                         print(range_list)
 
 							embed = discord.Embed(
