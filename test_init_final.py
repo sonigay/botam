@@ -946,8 +946,7 @@ while True:
 									description= '```' + SearchID + ' 모델 MNP 단가는 ' + result + ' 입니다.```',
 									color=0xff00ff
 									)
-							
-							
+										
 							
 							
 							await msg.channel.send(embed=embed, tts=False)
