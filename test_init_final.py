@@ -940,22 +940,14 @@ while True:
 
                                                         result = wks.acell(basicSetting[16]).value
 							
-							# 범위(셀 위치 리스트) 가져오기
-                                                        range_list = wks.range('A1:B10')
-                                                        print(range_list)
-                                                        # 범위에서 각 셀 값 가져오기
-                                                        for cell in range_list:
-                                                        print(cell.value)
+							
 
 							embed = discord.Embed(
 									description= '```' + SearchID + ' 모델 MNP 단가는 ' + result + ' 입니다.```',
 									color=0xff00ff
 									)
 							
-							embed = discord.Embed(
-									description= '```' + range_list + '  ' + for cell in range_list + ' 입니다.```',
-									color=0xff00ff
-									)
+							
 							
 							
 							await msg.channel.send(embed=embed, tts=False)
