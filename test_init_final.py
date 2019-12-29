@@ -938,7 +938,8 @@ while True:
 
 							wks.update_acell(basicSetting[15], SearchID)
 
-							result = wks.acell(basicSetting[16]).value
+							range_list = worksheet.range('A1:D2')
+                                                        print(range_list)
 
 							embed = discord.Embed(
 									description= '```' + SearchID + ' 모델 MNP 단가는 ' + result + ' 입니다.```',
