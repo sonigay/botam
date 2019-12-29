@@ -972,7 +972,7 @@ while True:
 
 							wks.update_acell(basicSetting[15], SearchID)
 
-							result = wks.acell(basicSetting[16]).value
+							result = wks.range(basicSetting[16]).value
 
 							embed = discord.Embed(
 									description= '```' + SearchID + ' 님이 받을 다이야는 ' + result + ' 다이야 입니다.```',
