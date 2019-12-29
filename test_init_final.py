@@ -1324,6 +1324,15 @@ while True:
 						name="----- 추가기능 -----",
 						value= '```[보스명]컷/멍/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
 						)
+				embed.add_field(
+						name="----- 추가기능2 -----",
+						value= '```[보스명]컷/멍/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
+						)
+				embed = discord.Embed(
+						title = "----- 명령어2 -----",
+						description= '```' + command_list + '```',
+						color=0xff00ff
+						)
 				await client.get_channel(channel).send( embed=embed, tts=False)
 
 			################ 미예약 보스타임 출력 ################ 
