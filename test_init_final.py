@@ -978,9 +978,8 @@ while True:
 									description= '```' + SearchID + ' 님이 받을 다이야는 ' + result + ' 다이야 입니다.```',
 									color=0xff00ff
 									)
-							await client.send_message(embed=embed, tts=False)
-		else :
-			message = await client.send_message(user,msg)
+							await client.send_message(user,msg)
+		
 			
 			################ 텍스트 정보확인 ################ 
 
