@@ -963,7 +963,9 @@ while True:
 					################ 정산확인 ################ 
 
 					if message.content.startswith(command[12]):
-						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
+						async def msg(ctx,userid:str,*,msg):
+                                                        user = ctx.message.server.get_member(userid) or user = client.get_member(userid)
+						 if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
 							SearchID = message.content[len(command[12])+1:]
 							gc = gspread.authorize(credentials)
 							wks = gc.open(basicSetting[12]).worksheet(basicSetting[14])
@@ -976,9 +978,9 @@ while True:
 									description= '```' + SearchID + ' 님이 받을 다이야는 ' + result + ' 다이야 입니다.```',
 									color=0xff00ff
 									)
-							await msg.channel.send(embed=embed, tts=False)
+							await client.send_message(embed=embed, tts=False)
 		else :
-			message = await client.get_channel(channel).fetch_message(msg.id)
+			message = await client.send_message(user,msg)
 			
 			################ 텍스트 정보확인 ################ 
 
