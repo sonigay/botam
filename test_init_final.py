@@ -958,30 +958,29 @@ while True:
 						await LadderFunc(num_cong, ladder, msg.channel)
 			
 			##################################
-			
+			if basicSetting[11] != "":
+				if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
+					message = await msg.channel.fetch_message(msg.id)
 
 					################ 정산확인 ################ 
 
-				async def msg(ctx,userid:str,*,msg):
-                                                        user = ctx.message.server.get_member(userid) or user = client.get_member(userid)
-				
 					if message.content.startswith(command[12]):
-						
-						 if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
+						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
 							SearchID = message.content[len(command[12])+1:]
 							gc = gspread.authorize(credentials)
 							wks = gc.open(basicSetting[12]).worksheet(basicSetting[14])
 
 							wks.update_acell(basicSetting[15], SearchID)
 
-							result = wks.range(basicSetting[16]).value
+							result = wks.acell(basicSetting[16]).value
 
 							embed = discord.Embed(
 									description= '```' + SearchID + ' 님이 받을 다이야는 ' + result + ' 다이야 입니다.```',
 									color=0xff00ff
 									)
-							await client.send_message(user,msg)
-		
+							await msg.channel.send(embed=embed, tts=False)
+		else :
+			message = await client.get_channel(channel).fetch_message(msg.id)
 			
 			################ 텍스트 정보확인 ################ 
 
@@ -1324,16 +1323,6 @@ while True:
 				embed.add_field(
 						name="----- 추가기능 -----",
 						value= '```[보스명]컷/멍/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
-						)
-				embed.add_field(
-						name="----- 추가기능2 -----",
-						value= '```[보스명]컷/멍/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
-						)
-				await client.get_channel(channel).send( embed=embed, tts=False)
-				embed = discord.Embed(
-						title = "----- 명령어2 -----",
-						description= '```' + command_list + '```',
-						color=0xff00ff
 						)
 				await client.get_channel(channel).send( embed=embed, tts=False)
 
