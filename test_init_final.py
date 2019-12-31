@@ -961,7 +961,7 @@ while True:
 			if basicSetting[11] != "":
 				if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
 					message = await msg.channel.fetch_message(msg.id)
-					
+
 					################ 정산확인 ################ 
 
 					if message.content.startswith(command[12]):
@@ -981,16 +981,6 @@ while True:
 							await msg.channel.send(embed=embed, tts=False)
 		else :
 			message = await client.get_channel(channel).fetch_message(msg.id)
-			
-			################ 음성파일 생성 후 재생 ################ 			
-				
-			if message.content.startswith(command[12]) or message.content.startswith('!ㅍ') or message.content.startswith('!V'):
-				tmp_sayMessage = message.content
-				sayMessage = tmp_sayMessage[len(command[12])+1:]
-				await MakeSound(message.author.display_name +'님이.' + sayMessage, './sound/say')
-				await client.get_channel(channel).send("```< " + msg.author.display_name + " >님이 \"" + sayMessage + "\"```", tts=False)
-				await PlaySound(voice_client1, './sound/say.wav')
-			
 			
 			################ 텍스트 정보확인 ################ 
 
@@ -1357,7 +1347,14 @@ while True:
 						)
 				await client.get_channel(channel).send( embed=embed, tts=False)
 
-		
+			################ 음성파일 생성 후 재생 ################ 			
+				
+			if message.content.startswith(command[15]) or message.content.startswith('!ㅍ') or message.content.startswith('!V'):
+				tmp_sayMessage = message.content
+				sayMessage = tmp_sayMessage[len(command[15])+1:]
+				await MakeSound(message.author.display_name +'님이.' + sayMessage, './sound/say')
+				await client.get_channel(channel).send("```< " + msg.author.display_name + " >님이 \"" + sayMessage + "\"```", tts=False)
+				await PlaySound(voice_client1, './sound/say.wav')
 
 			################ 보탐봇 재시작 ################ 
 
