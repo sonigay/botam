@@ -975,7 +975,7 @@ while True:
 							result = wks.acell(basicSetting[16]).value
 
 							embed = discord.Embed(
-									description= '```' + SearchID + ' 해당 퀵비는 ' + result + ' 입니다.```',
+									description= '```' + SearchID + ' ' + result + ' ```',
 									color=0xff00ff
 									)
 							await msg.channel.send(embed=embed, tts=False)
