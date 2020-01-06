@@ -975,8 +975,9 @@ while True:
 							result = wks.acell(basicSetting[16]).value
 
 							embed = discord.Embed(
-									description= '```' + SearchID + ' ' + result + ' ```',
-									color=0xff00ff
+									title = ' :motorcycle: 퀵비 가격비교 ',
+									description= '```' + SearchID + ' 까지 업체별 비용은' + result + '입니다. 금액이 다소 차이가 있을수 있습니다. ```',
+									color=0x00ff00
 									)
 							await msg.channel.send(embed=embed, tts=False)
 		else :
@@ -1905,8 +1906,9 @@ while True:
 					result = wks.acell(basicSetting[16]).value
 
 					embed = discord.Embed(
-							description= '```' + SearchID + '  ' + result + ' ```',
-							color=0xff00ff
+							title = ' :motorcycle: 퀵비 가격비교 ',
+							description= '```' + SearchID + ' 까지 업체별 비용은' + result + '입니다. 금액이 다소 차이가 있을수 있습니다. ```',
+							color=0x00ff00
 							)
 					await msg.channel.send(embed=embed, tts=False)
 
